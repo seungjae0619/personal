@@ -1,5 +1,9 @@
 version: 0.0
 os: linux
 files:
-  - source:  /
+  - source: /build/*
     destination: /home/ubuntu/build/
+hooks:
+  BeforeInstall:
+    - location: scripts/remove_existing_files.sh
+      runas: ubuntu
