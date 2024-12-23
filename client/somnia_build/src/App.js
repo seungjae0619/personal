@@ -14,7 +14,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hello world! Andrew</p>
-        <h2>This is my project</h2>
+        <h2>This is my project, hello</h2>
       </header>
     </div>
   );
