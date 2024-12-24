@@ -1,23 +1,27 @@
-const swaggerUi = require("swagger-ui-express");
-const swaggereJsdoc = require("swagger-jsdoc");
+const swaggerJsdoc = require("swagger-jsdoc");
 
-const options = {
-  swaggerDefinition: {
-    openapi: "3.0.0",
-    info: {
-      version: "1.0.0",
-      title: "personal_project",
-      description:
-        "프로젝트 설명 Node.js Swaager swagger-jsdoc 방식 RestFul API 클라이언트 UI",
-    },
-    servers: [
-      {
-        url: "http://localhost:3000", // 요청 URL
-      },
-    ],
+// Swagger definition
+const swaggerDefinition = {
+  openapi: "3.0.0",
+  info: {
+    title: "User API",
+    version: "1.0.0",
+    description: "API for managing users",
   },
-  apis: ["./routers/*.js", "./routers/user/*.js"], //Swagger 파일 연동
+  servers: [
+    {
+      url: "http://localhost:3000", // Your API base URL
+    },
+  ],
 };
-const specs = swaggereJsdoc(options);
 
-module.exports = { swaggerUi, specs };
+// Options for swagger-jsdoc
+const options = {
+  definition: swaggerDefinition,
+  apis: ["./index.js"], // Path to the file with your Swagger annotations
+};
+
+// Initialize swagger-jsdoc
+const swaggerSpec = swaggerJsdoc(options);
+
+module.exports = swaggerSpec;
