@@ -7,7 +7,6 @@ function App() {
       .then((res) => res.json())
       .then((data) => console.log(data));
   }, []);
-
   return (
     <div className="App">
       <header className="App-header">
