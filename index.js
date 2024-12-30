@@ -11,9 +11,9 @@ app.use(cors());
 
 app.use(express.json());
 
-const sslRootCert = fs.readFileSync(
+/* const sslRootCert = fs.readFileSync(
   path.resolve(__dirname, "/Users/tmdwo0619/downloads/global-bundle.pem")
-);
+); */
 // Now, set up the PostgreSQL connection using the forwarded port
 const pool = new Pool({
   user: "tmdwo0619",
@@ -21,10 +21,10 @@ const pool = new Pool({
   database: "personal_db_instance",
   password: "andy050619",
   port: 5432,
-  ssl: {
+  /* ssl: {
     rejectUnauthorized: true, // Ensures that SSL certificates are verified
     ca: sslRootCert, // Provide the root certificate for SSL verification
-  }, // Port that the SSH tunnel forwards
+  }, // Port that the SSH tunnel forwards */
 });
 
 pool.connect((err, client, done) => {
