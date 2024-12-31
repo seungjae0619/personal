@@ -3,7 +3,7 @@ import "./App.css";
 
 function App() {
   useEffect(() => {
-    fetch("http://localhost:8080/")
+    fetch("http://localhost:3000/")
       .then((res) => res.json())
       .then((data) => console.log(data));
   }, []);
